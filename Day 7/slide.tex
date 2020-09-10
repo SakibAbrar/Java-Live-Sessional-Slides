@@ -1,0 +1,268 @@
+
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+
+\usepackage{listings}
+\lstset{language=Java,
+                basicstyle=\footnotesize\ttfamily,
+                keywordstyle=\footnotesize\color{blue}\ttfamily,
+}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Functions]{7.Functions/Methods} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Sakib Abrar} % Your name
+\institute[BUET] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+CSE\\~\\Bangladesh University of Engineering \& Technology \\ % Your institution for the title page
+\medskip
+\textit{sakib.cghs@gmail.com} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{What is a method?}
+%------------------------------------------------
+
+
+\begin{frame}{What is a method?}
+\begin{itemize}
+\item A method is a block of code which only runs when it is called.\\
+\item You can pass data, known as parameters, into a method.\\
+\item Methods are used to perform certain actions, and they are also known as functions.\\
+\item Why use methods? To reuse code: define the code once, and use it many times.\\
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\section{Creating a method}
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Creating a method}
+A method must be declared within a class. It is defined with the name of the method, followed by parentheses\textbf{()}. Java provides some pre-defined methods, such as \textbf{System.out.println()}, but you can also create your own methods to perform certain actions:
+\begin{columns}[T]
+% code
+\begin{column}{\textwidth}
+\begin{lstlisting}
+public class FunctionExamples {
+
+   static void myMethod() {
+        System.out.println("Hello this is my method.");
+        System.out.println("I am Sakib Nice to meet you");
+        int a = 20;
+        int b = 30;
+        System.out.println("The sum is : " + (a + b) );
+    }
+
+    public static void main(String[] args) {
+        myMethod();
+    }
+}
+\end{lstlisting}
+\end{column}
+% description
+\end{columns}
+\end{frame}
+
+
+%------------------------------------------------
+\section{Parameters and Arguments}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Parameters and Arguments}
+Information can be passed to methods as parameter. Parameters act as variables inside the method.\\~\\
+Parameters are specified after the method name, inside the parentheses. You can add as many parameters as you want, just separate them with a comma.\\~\\
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Parameters and Arguments}
+\begin{columns}[T]
+% code
+\begin{column}{\textwidth}
+\begin{lstlisting}
+public class StringConstructors {
+
+    static void myMethod(String fname) {
+        System.out.println(fname + ", Welcome to the system.");
+    }
+
+    public static void main(String[] args) {
+        myMethod("Liam");
+        myMethod("Jenny");
+        myMethod("Anja");
+    }
+}
+\end{lstlisting}
+\end{column}
+% description
+\end{columns}
+
+\end{frame}
+
+%-----------------------------------------------
+\section{Return values}
+%-----------------------------------------------
+
+\begin{frame}{Return values}
+The \textbf{void} keyword, used in the examples above, indicates that the method should not return a value. If you want the method to return a value.\\~\\ You can use a primitive data type (such as \textbf{int}, \textbf{char}, etc.) instead of \textbf{void}, and use the \textbf{return} keyword inside the method. \\~\\
+You can also use object type as a return value which we will see later in OOP section.
+
+\end{frame}
+
+
+%-----------------------------------------------
+\section{Java Method Overloading}
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Java Method Overloading}
+\begin{itemize}
+\item With method overloading, multiple methods can have the same name with different parameters.\\
+\item Multiple methods can have the same name as long as the number and/or type of parameters are different.\\
+\begin{columns}[T]
+% code
+\begin{column}{\textwidth}
+\begin{lstlisting}
+public class FunctionExcersizes {
+    static double profit(double invest) {
+        return invest * 0.05;
+    }
+
+    static double profit(int invest) {
+        return (double) invest * 0.055;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(profit(3000.75));
+        System.out.println(profit(3100));
+    }
+}
+\end{lstlisting}
+\end{column}
+% description
+\end{columns}
+\end{itemize}
+
+
+\end{frame}
+
+%-----------------------------------------------
+
+%-----------------------------------------------
+\section{Complex methods}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Complex functions/methods}
+Complex methods may consist loops conditionals and other function call.\\~\\
+Don't be shy to try out any concepts you learned before inside a function.\\~\\
+
+\end{frame}
+
+%------------------------------------------------
+
+%-----------------------------------------------
+\section{Function Excersise}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Function Excersise}
+\textbf{Write a java function to calculate the average cgpa of the whole class while taking the individual cgpas as function parameters (or perhaps as an array!). \\ Write seperate function to calculate individual cgpa and use that to calculate average cgpa of the whole class.}
+\end{frame}
+
+%------------------------------------------------
+
+
+%--------------------------------------------------
+
+\begin{frame}
+\Huge{\centerline{THE END }}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 

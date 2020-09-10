@@ -1,0 +1,273 @@
+
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+
+\usepackage{listings}
+\lstset{language=Java,
+                basicstyle=\footnotesize\ttfamily,
+                keywordstyle=\footnotesize\color{blue}\ttfamily,
+}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Arrays \& Iterations]{4.Arrays and iterations} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Sakib Abrar} % Your name
+\institute[BUET] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+CSE\\~\\Bangladesh University of Engineering \& Technology \\ % Your institution for the title page
+\medskip
+\textit{sakib.cghs@gmail.com} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Array basics}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{What is an array?}
+\begin{itemize}
+\item A group of variables containing values that all have the same type.
+\item Arrays are fixed‐length entities
+\item In Java, arrays are objects, so they are considered reference types
+\item But the elements of an array can be either primitive types or reference types
+\end{itemize}
+\end{frame}
+
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{More on array}
+\begin{itemize}
+\item We access the element of an array using the following syntax.\\
+–name[index]\\
+–“index” must be a nonnegative integer\\
+–“index” can be int/byte/short/char but not long\\
+\item In Java, every array knows its own length\\
+\item The length information is maintained in a public final int member variable called length\\
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\section{Declaring and Creating Arrays}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Declaring and Creating Arrays}
+\begin{itemize}
+\item int c[ ] = new int [12]\\
+–Here, “c” is a reference to an integer array\\
+–“c” is now pointing to an array object holding 12 integers\\
+–Like other objects arrays are created using “new” and are created in the heap\\
+–“int c[ ]” represents both the data type and the variable name. Placing number here is a syntax error.\\
+–int c[12]; // compiler error\\
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\section{Conditional Example}
+%------------------------------------------------
+
+
+\begin{frame}[fragile]{Example}
+\textbf{Here is an example:}\\
+\begin{columns}[T]
+% code
+\begin{column}{\textwidth}
+\begin{lstlisting}
+public class ArrayExamples {
+    public static void main(String[] args) {
+        int arr[] = new int[10];
+
+        for (int idx = 0; idx < arr.length; idx++ ) {
+            arr[idx] = idx * idx; // square
+        }
+
+        for (int idx = 0; idx < arr.length; idx++ ) {
+            System.out.println(arr[idx]);
+        }
+
+    }
+}
+\end{lstlisting}
+\end{column}
+% description
+\end{columns}
+\end{frame}
+
+
+
+%-----------------------------------------------
+\section{Using an Array Initializer}
+%-----------------------------------------------
+
+\begin{frame}{Using an Array Initializer}
+\begin{itemize}
+\item We can also use an array initializer to create an array
+–int arr[ ] = {10, 20, 30, 40, 50}\\
+\item The length of the above array is 5
+\item n[0] is initialized to 10, n[1] is initialized to 20, and so on\\
+\item The compiler automatically performs a “new” operation taking the count information from the list and initializes the elements properly\\
+\end{itemize}
+\end{frame}
+
+
+%-----------------------------------------------
+\section{Multidimensional Arrays}
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Multidimensional Arrays}
+\begin{itemize}
+\item Can be termed as array of arrays.\\
+\item int b[ ][ ] = new int[3][4];\\
+–Length of first dimension = 3\\
+•b.length equals 3\\
+–Length of second dimension = 4\\
+•b[0].length equals 4\\
+\item int[ ][ ] b = new int[3][4];\\
+–Here, the data type is more evident i.e. “int[ ][ ]”\\
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+%-----------------------------------------------
+\section{For-each loop}
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{For-each loop}
+\textbf{For each loops are more comfy with arrays:}\\
+\begin{columns}[T]
+% code
+\begin{column}{\textwidth}
+\begin{lstlisting}
+public class ArrayExamples {
+    public static void main(String[] args) {
+
+        int arr[] = new int[10];
+        for (int idx = 0; idx < arr.length; idx++ ) {
+            arr[idx] = idx * idx;
+        }
+        for (int ele : arr) {
+            System.out.println(ele);
+        }
+
+    }
+}
+\end{lstlisting}
+\end{column}
+% description
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+
+%-----------------------------------------------
+\section{Array Exercise}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Array Exercise}
+\textbf{For 20 students store their marks of 4 subjects using random number generator. Then you'll be asked to show gpa of any students through input. Calculate and print the gpa of that student.}\\
+\end{frame}
+
+%------------------------------------------------
+
+
+%--------------------------------------------------
+
+\begin{frame}
+\Huge{\centerline{Take a break }}
+\Huge{\centerline{You've learned enough already }}
+\vspace{0.2in}
+\Huge{\centerline{THE END }}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 

@@ -1,0 +1,416 @@
+
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+
+\usepackage{listings}
+\lstset{language=Java,
+                basicstyle=\footnotesize\ttfamily,
+                keywordstyle=\footnotesize\color{blue}\ttfamily,
+}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Conditionals \& Loops]{3.Conditional statements and loops} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Sakib Abrar} % Your name
+\institute[BUET] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+CSE\\~\\Bangladesh University of Engineering \& Technology \\ % Your institution for the title page
+\medskip
+\textit{sakib.cghs@gmail.com} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Programming is all about logic}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Programming is all about logic}
+A game or any other application mainly consist of lots of logic.\\~\\
+You'll have to deal with the logic of your application.\\~\\
+Figuring out which logic should go with your application is the main task.\\~\\
+To implement logic we need some sort of basic tools for it. \\~\\
+Conditional and loops are the core tool of logic for this.\\~\\
+
+
+\end{frame}
+
+%------------------------------------------------
+\section{Conditional}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Conditional}
+\centerline{\huge{ if $( some conditions) \{  some tasks \}$  }}
+\vspace{0.4in}
+It is what it sounds. You impose some sort of condition then if that happens you do something.\\~\\
+Otherwise you do something else.
+\end{frame}
+
+%------------------------------------------------
+\section{Conditional Example}
+%------------------------------------------------
+
+
+\begin{frame}[fragile]{Example}
+\textbf{Here is an example of if:}\\
+\begin{columns}[T]
+% code
+\begin{column}{\textwidth}
+\begin{lstlisting}
+public class ConditionalExamples {
+    public static void main(String[] args) {
+        int age;
+        age = 10;
+
+        if ( age < 18 ) {
+            System.out.println("You are not allowed to view this content");
+        }
+    }
+}
+\end{lstlisting}
+\end{column}
+% description
+\end{columns}
+\vspace{0.4in} Then hit run and see!
+\end{frame}
+
+
+
+%-----------------------------------------------
+\section{Data type declaration and assignment}
+%-----------------------------------------------
+
+\begin{frame}[fragile]{ Declaration and assignment}
+\textbf{Here is an example of if and else:}\\
+\begin{columns}[T]
+% code
+\begin{column}{\textwidth}
+\begin{lstlisting}
+public class ConditionalExamples {
+    public static void main(String[] args) {
+        int age;
+        age = 10;
+
+        if ( age < 18 ) {
+            System.out.println("You are not allowed to view this content");
+        }
+        else {
+            System.out.println("Welcome to our Wargame");
+        }
+    }
+}
+\end{lstlisting}
+\end{column}
+% description
+\end{columns}
+\vspace{0.4in} Then hit run and see!
+\end{frame}
+
+
+%-----------------------------------------------
+\section{Multiple conditions}
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{What about multiple condtions?}
+\centerline{\huge{Use \&\& , $||$  ect  to combine conditions }}
+\vspace{0.2in}
+\begin{columns}[T]
+% code
+\begin{column}{\textwidth}
+\begin{lstlisting}
+public class ConditionalExamples {
+    public static void main(String[] args) {
+        int age;
+        age = 10;
+
+        if ( age > 18 && age < 60 ) {
+            System.out.println("You are a matured person now");
+        }
+        else {
+            System.out.println("You're either a baby or an old person");
+        }
+    }
+}
+\end{lstlisting}
+\end{column}
+% description
+\end{columns}
+\end{frame}
+
+
+%-----------------------------------------------
+\section{Multilevel conditional}
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Else if}
+\centerline{\huge{Use else if for more conditions }}
+\begin{columns}[T]
+% code
+\begin{column}{\textwidth}
+\begin{lstlisting}
+public class ConditionalExamples {
+    public static void main(String[] args) {
+        int age = 17;
+        if ( age < 25 ) {
+            System.out.println("You are young");
+        }
+        else if (age < 35) {
+            System.out.println("You're having midlife crisis");
+        }
+        else if (age < 55) {
+            System.out.println("You're slowly getting old");
+        }
+        else {
+            System.out.println("You are old");
+        }
+    }
+}
+\end{lstlisting}
+\end{column}
+% description
+\end{columns}
+\end{frame}
+
+
+%-----------------------------------------------
+\section{Why we need loops}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Loops}
+\centerline{\huge{Doing a task repeatedly is pretty boring.}}
+\vspace{0.4in}
+\centerline{\huge{Just use a loop to make your life easier.}}
+
+\end{frame}
+
+
+%-----------------------------------------------
+\section{For Loop}
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{For Loop}
+\centerline{\Large{ $for(initialization; condition; increment) \{  some tasks \}$  }}
+\vspace{0.2in}
+\begin{itemize}
+\item You take a variable and then for that variable you repeatedly do some tasks. Usually when the variable crosses some particular value you stop.
+\item So first you initialize that variable then until a certain condition holds you do those tasks repeatedly.
+\item Till that condition breaks you increment the value or you'll get stuck for ever.
+\end{itemize}
+\end{frame}
+
+%-----------------------------------------------
+\section{Loop Example}
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Examples}
+\textbf{This will get printed 100 times:}\\
+\begin{columns}[T]
+% code
+\begin{column}{\textwidth}
+\begin{lstlisting}
+public class LoopExamples {
+    public static void main(String[] args) {
+
+        for(int age = 1; age <= 100; age ++ ) {
+            System.out.println("Happy " + age + "th Birthday");
+        }
+
+    }
+}
+\end{lstlisting}
+\end{column}
+% description
+\end{columns}
+\end{frame}
+
+
+%--------------------------------------------------
+
+%-----------------------------------------------
+\section{You can use conditional within loops}
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Conditionals within loops}
+\textbf{You can aslo use conditionals to manipulate loops}\\
+\begin{columns}[T]
+% code
+\begin{column}{\textwidth}
+\begin{lstlisting}
+public class LoopExamples {
+    public static void main(String[] args) {
+
+        for(int age = 1; age <= 100; age ++ ) {
+            if ( age % 2 == 0 ) {
+                System.out.println("Happy Good Birthday");
+            }
+            else {
+                System.out.println("Happy Pocha Birthday");
+            }
+        }
+    }
+}
+\end{lstlisting}
+\end{column}
+% description
+\end{columns}
+\end{frame}
+
+
+%--------------------------------------------------
+
+
+%-----------------------------------------------
+\section{break and continue statement}
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{break and continue statement}
+\textbf{break and continue statement can a good way to manipulate loops}\\
+\begin{columns}[T]
+% code
+\begin{column}{\textwidth}
+\begin{lstlisting}
+public class LoopExamples {
+    public static void main(String[] args) {
+
+        for(int age = 1; age <= 100; age ++ ) {
+            if ( age % 2 == 0 ) {
+                continue;
+            }
+            System.out.println("Happy Birthday");
+        }
+    }
+}
+\end{lstlisting}
+\end{column}
+% description
+\end{columns}
+\end{frame}
+
+
+%-----------------------------------------------
+\section{Nested Loops and Conditionals}
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Nested Loops and Conditionals}
+\textbf{You can alwasy use loops inside loops and conditionals inside conditionals}\\
+\begin{columns}[T]
+% code
+\begin{column}{\textwidth}
+\begin{lstlisting}
+public class LoopExamples {
+    public static void main(String[] args) {
+
+        for(int age = 1; age <= 100; age ++ ) {
+            for(int month = 1; month <= 12; month ++ ) {
+                System.out.println("A:"+age+",M:"+month );
+            }
+        }
+
+    }
+}
+\end{lstlisting}
+\end{column}
+% description
+\end{columns}
+\end{frame}
+
+%--------------------------------------------------
+
+
+\begin{frame}
+\Huge{\centerline{The End}}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 

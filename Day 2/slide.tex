@@ -1,0 +1,385 @@
+
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+
+\usepackage{listings}
+\lstset{language=Java,
+                basicstyle=\footnotesize\ttfamily,
+                keywordstyle=\footnotesize\color{blue}\ttfamily,
+}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Java Datatypes]{2.A little dive into the data types} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Sakib Abrar} % Your name
+\institute[BUET] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+CSE\\~\\Bangladesh University of Engineering \& Technology \\ % Your institution for the title page
+\medskip
+\textit{sakib.cghs@gmail.com} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{What are the Data types?}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Data types}
+Data type simply indicates data that will be stored in our programs. But not all the data is same. That's why we need to clearly specify to java which type of data we are going to store.\\~\\
+We store our data in variables (also known as identifiers) and there are several types of it.\\~\\
+Variables are nothing but reserved memory locations to store values. This means that when you create a variable you reserve some space in the memory (RAM, SWAP ect.).\\~\\
+Variables that've been used in our program will reside in the memory as long as the program is running. \\~\\
+Based on the data type of a variable, the operating system allocates memory and decides what can be stored in the reserved memory.\\~\\
+
+
+\end{frame}
+
+%------------------------------------------------
+\section{Two types of data type}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Major Classification}
+\begin{itemize}
+
+\item \textbf{Primitive Data Type :}
+Primitive data types are more primal data types that doesn't need any object oriendted approach to be stored. 
+Java developers included these data types to maintain the portability of java as the size of these 
+primitive data types do not change from one operating system to another.\\~\\
+
+\item \textbf{Non Primitive Data Type :} 
+Non-Primitive type or Reference types are created using defined constructors of the classes. 
+They are used to access objects. We'll see them when we start studying Object Oriented Features. 
+
+
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\section{Primitive Data types}
+%------------------------------------------------
+
+
+\begin{frame}
+\frametitle{Primitive Data types}
+\begin{itemize}
+\item Integers\\
+–  byte 8‐bit integer (new)\\
+– short 16‐bit integer\\
+– int 32‐bit signed integer\\
+– long 64‐bit signed integer\\
+\item Real Numbers\\
+– float 32‐bit floating‐point number\\
+– double 64‐bit floating‐point number\\
+\item Other types\\
+– char 16‐bit, Unicode 2.1 character\\
+– boolean true or false, false is not 0 in Java\\
+
+\end{itemize}
+\end{frame}
+
+
+%-----------------------------------------------
+\section{Data type declaration and assignment}
+%-----------------------------------------------
+
+\begin{frame}[fragile]{ Declaration and assignment}
+
+\begin{columns}[T]
+% code
+\begin{column}{\textwidth}
+\begin{lstlisting}
+public class DataTypeExamples {
+    public static void main(String[] args) {
+        byte x;  // a byte sized variable
+        x = 120;
+        
+        int num;
+        num = 10; // only interger numbers allowed
+
+        float pi; // floating point numbers allowed
+
+        double PI; // also floating point number but bigger sized
+        PI = 3.1415965;
+
+        char ch; // a single UNICODE character 
+        ch = 'a';
+        
+        boolean passed; // either true or false
+        passed = false;
+    }
+}
+\end{lstlisting}
+\end{column}
+% description
+\end{columns}
+\vspace{0.4in} Then hit run and see!
+\end{frame}
+
+
+%-----------------------------------------------
+\section{Commenting your code}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Don't forget to comment your code}
+\centerline{\huge{It is very important to comment your code}}
+\vspace{0.2in}
+Comments are ignored by the compiler so they don't get run when executed. \\
+A good piece of code should be explained using comments.\\~\\
+\textbf{Two types of commenting in java}
+\begin{itemize}
+\item Single line comment: starts with // and ends in only one line
+\item Multi line comment: enclosed with /* and */ and between these two you can write as many line as you want
+\end{itemize}
+\end{frame}
+
+
+
+%-----------------------------------------------
+\section{Printing all the data types}
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Printing Data types}
+Printing any primitive data type in java is very easy.\\
+Just put it inside \textbf{System.out.println()}
+
+\begin{columns}[T]
+% code
+\begin{column}{\textwidth}
+\begin{lstlisting}
+public class DataTypeExamples {
+    public static void main(String[] args) {
+        byte x;  // a byte sized variable
+        x = 120;
+        System.out.println(x);
+        int num = 10; // interger numbers allowed
+        System.out.println(num);
+        double PI; // also floating point number but bigger sized
+        PI = 3.1415965;
+        System.out.println(PI);
+        char ch = 'a';
+        System.out.println(ch);
+        boolean passed;
+        passed = false;
+        System.out.println(passed);
+    }
+}
+
+\end{lstlisting}
+\end{column}
+% description
+\end{columns}
+\end{frame}
+
+
+%-----------------------------------------------
+\section{Taking input of all the data types}
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Time for user input}
+First you need to import Scanner. (WTH is importing?)
+
+\begin{columns}[T]
+% code
+\begin{column}{\textwidth}
+\begin{lstlisting}
+import java.util.Scanner;
+
+public class DataTypeExamples {
+    public static void main(String[] args) {
+
+        Scanner ourScanner = new Scanner(System.in);
+        /* spoiler alert!! this is a non-primitive type.
+        All the non-primitive type variable should
+        usually be newed before using*/
+
+        int num; // for integer input .nextInt();
+        num = ourScanner.nextInt();
+        double pi; // for double input .nextDouble();
+        pi = ourScanner.nextDouble();
+
+        System.out.println("Inputted integer :" + num);
+        System.out.println("Inputted double : " + pi);
+    }
+}
+\end{lstlisting}
+\end{column}
+% description
+\end{columns}
+\end{frame}
+
+
+%-----------------------------------------------
+\section{Why do we need to import a class?}
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Importing a class}
+Don't try to code everything of your own.\\
+\vspace{0.2in}
+Be smart and only think about coding your own portion! Leave the rest to someone else and learn to use it.\\
+\vspace{0.2in}
+JDK includes lots of java classes that may fulfill your needs.\\
+\vspace{0.2in}
+Besides there are plenty of free and opensource commonly solved code of java online.\\
+\vspace{0.2in}
+Just import and use.\\
+\vspace{0.2in}
+\end{frame}
+
+%-----------------------------------------------
+\section{Type casting}
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Type casting}
+Type casting is when you assign a value of one primitive data type to another type.
+
+In Java, there are two types of casting:
+\begin{itemize}
+\item Widening Casting (automatically) - converting a smaller type to a larger type size\\
+byte $\rightarrow$  short $\rightarrow$ char $\rightarrow$ int $\rightarrow$ long $\rightarrow$ float $\rightarrow$ double
+
+\item Narrowing Casting (manually) - converting a larger type to a smaller size type\\
+double $\rightarrow$ float $\rightarrow$ long $\rightarrow$  int $\rightarrow$ char $\rightarrow$ short $\rightarrow$ byte
+\end{itemize}
+\end{frame}
+
+
+%--------------------------------------------------
+
+\begin{frame}
+\frametitle{Type casting variations}
+\textbf{Type casting means converting one type of variable into another type of variable.\\~\\}
+\begin{itemize}
+\item \textbf{Widening Casting :\\}
+Widening casting is done automatically when passing a smaller size type to a larger size type.\\~\\
+\item \textbf{Narrowing Casting :\\}
+Narrowing casting must be done manually by placing the type in parentheses in front of the value.
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------
+
+
+\begin{frame}[fragile]
+\frametitle{Type casting Example}
+\begin{columns}[T]
+% code
+\begin{column}{\textwidth}
+\begin{lstlisting}
+public class MyClass {
+  public static void main(String[] args) {
+
+    int myInt = 9;
+    double myDouble = myInt; 
+    // Automatic casting: int to double
+    System.out.println(myInt);      // Outputs 9
+    System.out.println(myDouble);   // Outputs 9.0
+
+    double myDouble = 9.78;
+    int myInt = (int) myDouble; 
+    // Manual casting: double to int
+    System.out.println(myDouble);   // Outputs 9.78
+    System.out.println(myInt);      // Outputs 9
+  }
+}
+\end{lstlisting}
+\end{column}
+% description
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\Huge{\centerline{The End}}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 
